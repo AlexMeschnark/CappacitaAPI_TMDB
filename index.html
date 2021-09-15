@@ -7,24 +7,34 @@
     <title>CappacitaFilmes</title>
     <!-- Link para pegar o estilo CSS dos servidores bootstrap -->
    <link rel="stylesheet" href="src/style.css">
+   <link rel="stylesheet" href="src/menu.css">
    <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
 </head>
 <body>
     <header>
-        <form id="form">
-            <input type="text" placeholder="Search"  id="search"
-            class="search">
-        </form>
+        <nav>
+            <a class="logo" href="/index.html">CappacitaFilmes</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                 <li> <a href="/">Início</a> </li>
+                 <li> <a href="/">Sobre</a> </li>
+                 <li> <a href="/">Comentários</a> </li>
+                 <li> <a href="/">Contato</a> </li>
+            </ul>
+        </nav>
     </header>
 
     <main id="main">
-        <div class="movie">
-           
-        </div>
+      
        
     </main>
 
     <script src="/filmes.js"></script>
+    <script src="/src/js/mobile-menu.js"></script>
     <!-- Script necessário para utilizar o Bootstrap -->
 </body>
 </html>

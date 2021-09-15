@@ -12,7 +12,6 @@ const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'
 //now_playing?api_key=1bcef3d1ab2664345811d5c1c8648c4b&language=pt-BR&page=1
 app.use(cors());
 
-//getMovies(API_URL)
 
 app.get('/', async (req, res) => {
     
@@ -34,7 +33,8 @@ app.get('/discover', async (req, res) => {
       // response é a resposta do axios MAS eu tiro o data de dentro do response.
     const { data } = await axios(
         `${API_URL}&language=pt-BR`)
-    console.log(data)
+      // `${BASE_URL}/movie/top_rated?${API_KEY}&language=pt-BR`);
+   // console.log(data)
     return res.json(data.results);
         
     } catch (error) {

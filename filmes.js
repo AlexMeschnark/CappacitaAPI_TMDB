@@ -41,20 +41,21 @@ async function getMovies()
        
         output +=
         `
+        <div class="movie">
         <img src="${IMG_URL}${dado.backdrop_path}" alt="${dado.title}">
            
         <div class="movie-info">
             <h3>${dado.title}</h3>
             <span class="${getColor(dado.vote_average)}">${dado.vote_average}</span>
         </div>
-
         <div class="overview">
             <h3>Overview</h3>
              ${dado.overview}
         </div>
+        </div>
         `
     }
-    document.querySelector('.movie').innerHTML = output
+    document.querySelector('#main').innerHTML = output
     
 
  
