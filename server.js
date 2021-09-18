@@ -42,5 +42,25 @@ app.get('/discover', async (req, res) => {
     }
 
 })
+/*
+app.get('/pokemons/:id', async (req, res) => {
+    res.send(await dataBase.mostrarPokemon(req.params.id))
+})
+*/
+   app.get('/movie/:id', async (req, res) => {
+    
+        try {
+        const { data } = await axios(
+            `${BASE_URL}/movie/${req.params.id}?${API_KEY}&language=pt-BR`);
+        return res.json(data);
+            
+        } catch (error) {
+            console.error(error);
+        }
+    
+    })
+    
+
+
 
 app.listen('3003')

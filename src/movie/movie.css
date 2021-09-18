@@ -1,0 +1,42 @@
+.btn{
+    padding: 10px;
+    background: rgb(19, 220, 59);
+    display: inline-block;
+    color: white;
+    position: absolute;
+
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: aliceblue;
+    color: black;
+}
+
+.modal{
+    width: 500px;
+    height: 500px;
+    background-color: brown;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: animate;
+    animation-duration: 800ms;
+    
+}
+
+@keyframes animate {
+    from{opacity: 1;}
+    from{opacity: 0;}
+}
+
+.fechar{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 30%;
+    float: right;
+    cursor: pointer;
+}
