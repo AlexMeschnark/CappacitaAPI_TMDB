@@ -1,4 +1,5 @@
 
+
 const IMG_URL = 'https://image.tmdb.org/t/p/w500'
 
 let idMovie = ''
@@ -7,17 +8,7 @@ let idMovie = ''
 
 getMovies()
 
-async function getContent() {
-    try {
-        const response = await fetch('http://localhost:3003/')
-        const data = await response.json();
-        showMovie(data);
-    } catch (error) {
-        console.error
-    }
-
-}
-
+// Pegando filmes do discover.
 async function getMovies() {
     try {
         const res = await fetch('http://localhost:3003/discover')
@@ -33,19 +24,32 @@ async function getMovies() {
 
 function showMovie(dados) {
     let linkImg = ''
+    
     for (let dado of dados) {
+
+
+        descriptionLength = dado.overview
+    if (descriptionLength.length > 150)
+    {
+        descriptionLength= descriptionLength.substring(0,150)+'...';
+    }
+
+    if (descriptionLength == '')
+    {
+        descriptionLength= 'Filme sem descrição.';
+    }
+
+
         linkImg = IMG_URL + dado.backdrop_path
         movieId = dado.id
         let main = document.getElementById('main')
         let movie = document.createElement('div')
-        let movieIdDiv = document.createElement('div')
+
         movie.className = 'movie'
         let movieInfo = document.createElement('div')
         let btnDetails = document.createElement('div')
         btnDetails.className = 'btn'
-        // let link = document.createElement('a')
-        //  btnDetails.setAttribute('href', './src/movie/movie.html');
-        // link.appendChild(btnDetails)
+
         btnDetails.innerHTML = 'Detalhes'
 
         movie.appendChild(btnDetails)
@@ -63,10 +67,6 @@ function showMovie(dados) {
             getMovieID(dado.id)
             document.getElementById('modal').style.top = "0";
         }
-        // { 
-        //     document.getElementById('modal').style.top = "0"; 
-        //     await getMovieID(dado.id)
-        //   }
         let vote = document.createElement('span')
 
 
@@ -83,7 +83,7 @@ function showMovie(dados) {
         movieInfo.appendChild(title)
         movieInfo.appendChild(vote)
 
-        pOverview.innerHTML = dado.overview
+        pOverview.innerHTML = descriptionLength;
         hOverview.innerHTML = 'Descrição'
         divOverview.appendChild(hOverview)
         divOverview.appendChild(pOverview)
@@ -95,28 +95,26 @@ function showMovie(dados) {
 
 }
 
-
+// Pegando por ID. (Retorno da Modal).
 async function getMovieID(id) {
     try {
         const res = await fetch(`http://localhost:3003/movie/${id}`)
         const data = await res.json();
         showMovieID(data)
-        // console.log(data)
     } catch (error) {
         console.error(error)
     }
 }
-//
 
 function showMovieID(dados) {
-    let descriptionLength = dados.overview
-
-    if(descriptionLength.length > 15)
+   
+    descriptionLength = dados.overview
+    if (descriptionLength.length > 200)
     {
-        descriptionLentgh = descriptionLength.substring(0,15)+'...';
+        descriptionLength= descriptionLength.substring(0,200)+'...';
     }
 
-    let mainID = document.getElementById('main-id')
+    
     let section = document.querySelector('.featured')
     let divOriginalName = document.getElementById('original-name')
     let points = document.getElementById('featured-points')
@@ -137,21 +135,8 @@ function showMovieID(dados) {
     points.innerHTML = `Pontuação: ${dados.vote_average}`;
     points.className = `${getColor(dados.vote_average)}`
     description.innerHTML = descriptionLength;
+     
     date.innerHTML = firstDate.getFullYear();
-    console.log(dados)
-    // for (let genero of dados.genres)
-    // {
-    //     let div = document.createElement('div')
-    //     div.innerHTML = genero.name
-    //     mainID.appendChild(div)
-    // }
-
-
-    // let teste = document.getElementById('teste')
-    // let title = document.createElement('h1')
-    // title.innerHTML = dados.title
-    // teste.appendChild(title)
-
 }
 
 
@@ -175,6 +160,3 @@ function getColor(vote) {
 }
 
 
-// export default {
-//     idMovie 
-// }

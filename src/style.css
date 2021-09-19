@@ -9,13 +9,17 @@
 }
 
 body{
-    background-color: var(--primary-color);
+    background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
     font-family: 'Popins', sans-serif;
     margin: 0;
     width: 100%;
     height: 100%;
 }
-
+.apresentação{
+  display: flex;
+  justify-content: center
+  
+}
 main{
     display: flex;
     flex-wrap: wrap;
@@ -80,6 +84,11 @@ main{
     max-height: 100%;
     transform: translateY(101%);
     transition: transform 0.3s ease-in;
+    
+}
+.overview h3{
+    font-weight: bold;
+    color: rgb(167, 159, 159);
 }
 
 .movie:hover .overview{
@@ -88,7 +97,7 @@ main{
 
 .btn{
     padding: 10px;
-    background: rgb(140, 19, 220);
+    background: rgba(69, 2, 150, 0.53);
     display: inline-block;
     color: white;
     position: absolute;
@@ -112,6 +121,7 @@ main{
 
 }
 
+/*  modal  */
 .modal{
     width: 60%;
     height: 50%;
@@ -119,20 +129,12 @@ main{
     border: 1px solid #000;
     border-radius: 5px;
     margin: 80px auto 0 auto;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    animation: animate;
-    animation-duration: 800ms; */
-    
 }
 
 
 
 
-/*  modal  */
+
 
 .featured{
     height: 60vh;
@@ -217,3 +219,37 @@ padding-top: 5px;
     from{opacity: 1;}
     from{opacity: 0;}
 }
+
+.container{
+    display: flex;
+    flex-flow:row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.justify{
+    text-align:justify ;
+
+}
+
+
+.center{
+    text-align: center;
+}
+
+#menu li {
+    display: inline;
+    padding:30px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#menu li a:hover{
+    color:darkorchid;
+}
+

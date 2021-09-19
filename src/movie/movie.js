@@ -1,6 +1,6 @@
 
 //import {idMovie} from ('../../filmes')
-const { idMovie } = require('../../filmes')
+const { idMovie } = require('../../filmes').default
 
 
 getMovieID(idMovie)

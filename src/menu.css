@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-a{
+nav a{
     color: #fff;
     text-decoration: none;
     transition: 0.3s;
@@ -11,6 +11,7 @@ a{
 
 a:hover {
     opacity: 0.7;
+    color:  #8607fd;
 }
 
 .logo {

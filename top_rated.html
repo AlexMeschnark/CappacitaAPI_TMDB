@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/menu.css"> 
+    <link rel="stylesheet" href="src/style.css">
+    <title>Top 20</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a class="logo" href="/index.html">CappacitaFilmes</a>
+            <ul class="nav-list">
+                <li> <a href="../../index.html">Início</a> </li>
+                <li> <a href="/top_rated.html">Melhores Filmes</a> </li>
+                <li> <a href="/src/comentarios/comentarios.html">Comentários</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-top">
+
+    </main>
+    
+    <div class="bg-modal" id="modal">
+        <div class="modal">
+            <div class="close" onclick="fechar()"> Fechar </div>
+            <div id="main-id">
+                <section class="featured">
+                    <div class="featured--vertical">
+                        <div class="featured-name" id="original-name"></div>
+                        <div class="featured-info">
+                            <div id="featured-points"></div>
+                            <div id="total-points"></div>
+                            <div id="featured-year"></div>
+                            <div id="featured-description"></div>
+                            <!-- <div><strong></strong>Gêneros:</strong></div> -->
+                            <div id="featured-genres"></div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+            <!-- <div  class="fechar"></div> -->
+        </div>
+    </div>
+
+    <script src="/top_rated.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="./comentarios.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/index.html">CappacitaFilmes</a>
+            <ul class="nav-list">
+                <li> <a href="../../index.html">Início</a> </li>
+                <li> <a href="/top_rated.html">Melhores Filmes</a> </li>
+                <li> <a href="/src/comentarios/comentarios.html">Comentários</a> </li>
+            </ul>
+            
+          
+        </nav>
+    </header>
+
+
+    <main class="group">
+
+
+        <div class="box">
+            <form method="POST" action="comentarios.js">
+                <fieldset>
+                    <legend><b>Envie seu comentário</b></legend>
+                    <div class="inputBox">
+                        <input type="text" name="nome" id="nome" class="inputUser" required>
+                        <label for="nome" class="labelInput">Nome completo</label>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="email" id="email" class="inputUser" required>
+                        <label for="email" class="labelInput">Email</label>
+                    </div>
+                    <div class="inputBox">
+                        <!-- <input type="text" name="comment" id="comment" class="inputUser" required> -->
+                        <input type="text" name="comment" id="comment" class="inputUser" required>
+                        <label for="comment" class="labelInput">Comentario</label>
+                    </div>
+                    <input type="submit" name="submit" id="submit">
+                </fieldset>
+            </form>
+        </div>
+
+        <div id="main-comentario"></div>
+
+    </main>
+
+
+    <script src="/src/comentarios/comentarios.js" defer></script>
+</body>
+
+</html>
