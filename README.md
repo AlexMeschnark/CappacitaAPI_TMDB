@@ -10,10 +10,20 @@ Para rodar em sua máquina, entre na pasta database do projeto e no arquivo knex
 
 CREATE DATABASE comentarios; USE comentarios;
 
-CREATE TABLE comentario( idComentario int AUTO_INCREMENT, nome varchar(30) NOT NULL, email varchar(100) NOT NULL, comentario varchar(255) NOT NULL, create_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (IdComentario) );
+CREATE TABLE comentario( idComentario int AUTO_INCREMENT, 
+nome varchar(30) NOT NULL, 
+email varchar(100) NOT NULL, 
+comentario varchar(255) NOT NULL,
+create_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (IdComentario) );
+Caso queira outro nome de database ou/e tabela, precisará mudar no knexfile.js a database para o nome da sua DATABASE e no database.js alterar onde estiver escrito 'comentario'
+pela TABLE que criou. 
 
 Depois de configurado basta utilizar os seguintes comandos no cmd dentro da pasta do projeto: npm i para instalar todas as dependencias e npm start e em paralelo npx lite-server para rodar o servidor e abrir em seu navegador.
 
 Este projeto consome as rotas do themoviedb: discover - Método GET onde retorna uma lista de 20 filmes de diferentes tipos. top rated - Método GET onde retorna uma lista com os 20 melhores filmes do momento. movie_id - Método GET onde retorna o único filme que deseja com o parâmetro de ID do mesmo.
 
 Ele também consome as rotas do banco de dados para salvar um novo comentário com método POST e para trazer para o front end com método GET.
+
+
+
