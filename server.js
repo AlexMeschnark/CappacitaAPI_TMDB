@@ -85,7 +85,7 @@ app.get('/discover', async (req, res) => {
     
 
 
-
-app.listen('3003')
+const PORT = process.env.PORT || 3003
+app.listen(PORT)
 
 module.exports = { app }
